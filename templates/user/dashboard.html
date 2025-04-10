@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bem-vindo, {{ user.first_name }}</h1>
+<p>Veja abaixo as vagas disponíveis para você:</p>
+
+<div class="vagas">
+  {% for vaga in vagas %}
+    <div class="vaga">
+      <h3>{{ vaga.funcao }}</h3>
+      <p>{{ vaga.descricao }}</p>
+      <a href="{% url 'candidatar' vaga.id %}">Candidatar-se</a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

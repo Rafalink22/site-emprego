@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Painel Administrativo</h1>
+<div class="resumo">
+  <p>Total de empresas: {{ total_empresas }}</p>
+  <p>Total de vagas: {{ total_vagas }}</p>
+  <p>Total de usuários: {{ total_usuarios }}</p>
+</div>
+
+<a href="{% url 'gerenciar_empresas' %}">Gerenciar Empresas</a>
+<a href="{% url 'gerenciar_vagas' %}">Gerenciar Vagas</a>
+<a href="{% url 'gerenciar_usuarios' %}">Gerenciar Usuários</a>
+{% endblock %}

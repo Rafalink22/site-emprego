@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Gerenciar Vagas</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Função</th>
+      <th>Empresa</th>
+      <th>Data Limite</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for vaga in vagas %}
+      <tr>
+        <td>{{ vaga.funcao }}</td>
+        <td>{{ vaga.empresa.razao_social }}</td>
+        <td>{{ vaga.data_limite }}</td>
+        <td>
+          <a href="{% url 'editar_vaga' vaga.id %}">Editar</a>
+          <a href="{% url 'excluir_vaga' vaga.id %}">Excluir</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
